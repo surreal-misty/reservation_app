@@ -533,3 +533,25 @@ select:focus {
   color: #999;
   font-size: 13px;
 }
+.home-page {
+  width: 90%;
+  max-width: 900px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.home-box {
+  background-color: #ffffff;
+  padding: 70px 40px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.home-box h1 {
+  margin-bottom: 20px;
+}
+
+.home-box p {
+  margin-bottom: 30px;
+  color: #77737a;
+}
