@@ -13,8 +13,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  color: #4f4f52;
-  background-color: #f5e9ed;
+  color: #111111;
+  background-color: #ffffff;
   line-height: 1.7;
 }
 
@@ -44,7 +44,7 @@ h2 {
 
 header {
   background-color: #ffffff;
-  border-bottom: 1px solid #ded9db;
+  border-bottom: 1px solid #111111;
 }
 
 header nav {
@@ -58,7 +58,7 @@ header nav {
 }
 
 header nav > a {
-  color: #48484b;
+  color: #111111;
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
@@ -75,7 +75,7 @@ header summary {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #55555a;
+  color: #111111;
   font-size: 14px;
 }
 
@@ -97,10 +97,8 @@ header details > div {
   z-index: 10;
   min-width: 180px;
   padding: 14px;
-  background: #ffffff;
-  border: 1px solid #ded9db;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(70, 65, 68, 0.08);
+  background-color: #ffffff;
+  border: 1px solid #111111;
 }
 
 header details a,
@@ -110,7 +108,7 @@ header details button {
   padding: 9px 8px;
   border: 0;
   background: transparent;
-  color: #55555a;
+  color: #111111;
   text-align: left;
   text-decoration: none;
   font: inherit;
@@ -119,16 +117,20 @@ header details button {
 
 header details a:hover,
 header details button:hover {
-  background-color: #f5e9ed;
+  background-color: #00ffff;
 }
 
 /* ===== 共通コンテナ ===== */
 
 .rooms-page,
-.reservations-page {
+.reservations-page,
+.account-page,
+.profile-page,
+.room-detail-page,
+.reservation-confirm-page {
   width: 90%;
   max-width: 1000px;
-  margin: 64px auto;
+  margin: 60px auto;
 }
 
 /* ===== ページ見出し ===== */
@@ -143,40 +145,42 @@ header details button:hover {
 
 .rooms-label {
   margin-bottom: 4px;
-  color: #979196;
+  color: #666666;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
 }
 
-.rooms-header h1 {
+.rooms-header h1,
+.reservations-page h1 {
   margin: 0;
-  color: #46464a;
+  color: #111111;
 }
 
 /* ===== ボタン ===== */
 
 .rooms-button {
   display: inline-block;
-  padding: 11px 18px;
-  background-color: #9fc8c5;
-  color: #ffffff;
+  padding: 12px 20px;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background-color: #00ffff;
+  color: #111111;
   text-decoration: none;
-  border-radius: 6px;
   font-size: 14px;
-  transition: opacity 0.2s ease;
+  font-weight: 600;
 }
 
 .rooms-button:hover {
-  opacity: 0.8;
+  background-color: #111111;
+  color: #ffffff;
 }
 
 button,
 input[type="submit"] {
-  border: 0;
-  padding: 11px 18px;
-  border-radius: 6px;
-  background-color: #9fc8c5;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background-color: #111111;
   color: #ffffff;
   font: inherit;
   cursor: pointer;
@@ -184,10 +188,11 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-  opacity: 0.8;
+  background-color: #00ffff;
+  color: #111111;
 }
 
-/* ===== 検索フォーム・一般フォーム ===== */
+/* ===== フォーム ===== */
 
 form {
   margin-bottom: 36px;
@@ -200,7 +205,7 @@ form > div {
 label {
   display: block;
   margin-bottom: 6px;
-  color: #66666b;
+  color: #111111;
   font-size: 13px;
   font-weight: 600;
 }
@@ -211,10 +216,10 @@ select {
   width: 100%;
   max-width: 480px;
   padding: 11px 13px;
-  border: 1px solid #d8d3d5;
-  border-radius: 5px;
+  border: 1px solid #999999;
+  border-radius: 0;
   background-color: #ffffff;
-  color: #4f4f52;
+  color: #111111;
   font: inherit;
 }
 
@@ -227,8 +232,8 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: #c9a6b3;
-  box-shadow: 0 0 0 3px rgba(201, 166, 179, 0.12);
+  border-color: #111111;
+  box-shadow: 0 0 0 2px #00ffff;
 }
 
 /* ===== 施設一覧 ===== */
@@ -236,20 +241,19 @@ select:focus {
 .rooms-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 28px;
 }
 
 .room-card {
   overflow: hidden;
   background-color: #ffffff;
-  border: 1px solid #e2dddf;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #111111;
+  border-radius: 0;
+  transition: transform 0.2s ease;
 }
 
 .room-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(70, 65, 68, 0.08);
+  transform: translateY(-3px);
 }
 
 .room-card__image {
@@ -265,7 +269,7 @@ select:focus {
 
 .room-card__date {
   margin-bottom: 4px;
-  color: #aaa3a7;
+  color: #777777;
   font-size: 12px;
 }
 
@@ -274,29 +278,29 @@ select:focus {
 }
 
 .room-card h2 a {
-  color: #3f3f43;
+  color: #111111;
   text-decoration: none;
 }
 
 .room-card h2 a:hover {
-  color: #ad8292;
+  background-color: #00ffff;
 }
 
 .room-card__description {
   margin-bottom: 14px;
-  color: #77737a;
+  color: #555555;
   font-size: 14px;
 }
 
 .room-card__price {
   margin-bottom: 0;
-  color: #49494d;
+  color: #111111;
   font-size: 18px;
   font-weight: 600;
 }
 
 .room-card__price span {
-  color: #999397;
+  color: #777777;
   font-size: 12px;
   font-weight: 400;
 }
@@ -305,7 +309,7 @@ select:focus {
 
 .reservations-page h1 {
   margin-bottom: 36px;
-  color: #46464a;
+  color: #111111;
 }
 
 .reservation {
@@ -314,8 +318,8 @@ select:focus {
   margin-bottom: 24px;
   padding: 20px;
   background-color: #ffffff;
-  border: 1px solid #e2dddf;
-  border-radius: 8px;
+  border: 1px solid #111111;
+  border-radius: 0;
 }
 
 .reservation__image {
@@ -338,18 +342,294 @@ select:focus {
 }
 
 .reservation__body h2 a {
-  color: #3f3f43;
+  color: #111111;
   text-decoration: none;
 }
 
 .reservation__body h2 a:hover {
-  color: #b47d8c;
+  background-color: #00ffff;
 }
 
 .reservation__body p {
   margin: 7px 0;
-  color: #77737a;
+  color: #555555;
   font-size: 14px;
+}
+
+/* ===== アカウント・プロフィール ===== */
+
+.account-box,
+.profile-box,
+.room-detail-box,
+.room-booking-box,
+.reservation-confirm-box {
+  padding: 30px;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 0;
+}
+
+.account-box p,
+.profile-box p {
+  margin-bottom: 20px;
+}
+
+.account-box span,
+.profile-box span,
+.room-detail-box span,
+.reservation-confirm-box span {
+  display: block;
+  color: #777777;
+  font-size: 13px;
+}
+
+.simple-link {
+  margin-left: 15px;
+  color: #555555;
+}
+
+.profile-image {
+  margin-bottom: 25px;
+}
+
+.profile-image img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.room-detail-image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 25px;
+}
+
+.room-detail-box p,
+.reservation-confirm-box p {
+  margin-bottom: 18px;
+}
+
+.room-booking-box h2 {
+  margin-bottom: 25px;
+}
+
+/* ===== トップページ ===== */
+
+.home-page {
+  min-height: calc(100vh - 72px);
+  padding: 40px 6%;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.home-hero {
+  position: relative;
+  min-height: 620px;
+  padding: 80px 7%;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.home-copy {
+  position: relative;
+  z-index: 3;
+  width: 48%;
+}
+
+.home-label {
+  margin-bottom: 24px;
+  color: #111111;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.home-hero h1 {
+  margin-bottom: 28px;
+  color: #111111;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.home-title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.home-description {
+  margin-bottom: 32px;
+  color: #555555;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 14px 26px;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background-color: #00ffff;
+  color: #111111;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.home-button:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.home-photo {
+  position: absolute;
+  top: 70px;
+  right: 7%;
+  z-index: 2;
+  width: 43%;
+  height: 500px;
+  overflow: hidden;
+  border: 2px solid #111111;
+}
+
+.home-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-accent {
+  position: absolute;
+  top: 85px;
+  right: 5%;
+  z-index: 1;
+  width: 43%;
+  height: 500px;
+  background-color: #00ffff;
+}
+
+.home-info {
+  position: absolute;
+  right: 7%;
+  bottom: 20px;
+  z-index: 3;
+  display: flex;
+  gap: 18px;
+  color: #111111;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+/* ===== ログインページ ===== */
+
+.login-page {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-image: url("karsten-winegeart-lXVpuhQfoS4-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.login-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+.login-box h1 {
+  margin-bottom: 40px;
+  color: #111111;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.login-box form {
+  margin: 0;
+}
+
+.login-box form > div {
+  margin-bottom: 22px;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 7px;
+  color: #111111;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: 100%;
+  max-width: none;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid #aaaaaa;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.login-box input[type="email"]:focus,
+.login-box input[type="password"]:focus {
+  outline: none;
+  border-bottom: 2px solid #00ffff;
+  box-shadow: none;
+}
+
+.login-box input[type="submit"] {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.login-box input[type="submit"]:hover {
+  background-color: #00ffff;
+  color: #111111;
+}
+
+.login-box > a {
+  display: block;
+  margin-top: 25px;
+  color: #555555;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.login-box > a:hover {
+  color: #111111;
+  text-decoration: underline;
 }
 
 /* ===== スマホ ===== */
@@ -360,7 +640,11 @@ select:focus {
   }
 
   .rooms-page,
-  .reservations-page {
+  .reservations-page,
+  .account-page,
+  .profile-page,
+  .room-detail-page,
+  .reservation-confirm-page {
     width: 92%;
     margin: 40px auto;
   }
@@ -389,169 +673,427 @@ select:focus {
     width: 100%;
     height: 220px;
   }
+
+  .home-page {
+    padding: 20px;
+  }
+
+  .home-hero {
+    min-height: 700px;
+    padding: 50px 25px;
+  }
+
+  .home-copy {
+    width: 100%;
+  }
+
+  .home-hero h1 {
+    font-size: 34px;
+  }
+
+  .home-photo {
+    top: 380px;
+    right: 8%;
+    width: 78%;
+    height: 250px;
+  }
+
+  .home-accent {
+    top: 395px;
+    right: 6%;
+    width: 78%;
+    height: 250px;
+  }
+
+  .home-info {
+    right: 20px;
+    bottom: 15px;
+    gap: 12px;
+  }
+
+  .login-page {
+    min-height: calc(100vh - 60px);
+    padding: 30px 20px;
+  }
+
+  .login-box {
+    max-width: 360px;
+    padding: 40px 30px;
+  }
 }
 
-.account-page {
-  width: 90%;
-  max-width: 700px;
-  margin: 60px auto;
+/* ===== 新規登録ページ ===== */
+
+.registration-page {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background-image: url("karsten-winegeart-mEik3uHkAHM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.account-box {
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 30px;
-  margin-bottom: 25px;
-  border-radius: 8px;
-}
-.account-box p {
-  margin-bottom: 20px;
+.registration-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
-.account-box span {
+.registration-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: 45px 50px;
+  background-color: #ffffff;
+}
+
+.registration-box h1 {
+  margin-bottom: 35px;
+  color: #111111;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.registration-box form {
+  margin: 0;
+}
+
+.registration-box form > div {
+  margin-bottom: 18px;
+}
+
+.registration-box label {
   display: block;
-  color: #999;
+  margin-bottom: 6px;
+  color: #111111;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.registration-box input[type="text"],
+.registration-box input[type="email"],
+.registration-box input[type="password"] {
+  width: 100%;
+  max-width: none;
+  padding: 11px 0;
+  border: 0;
+  border-bottom: 1px solid #aaaaaa;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.registration-box input[type="text"]:focus,
+.registration-box input[type="email"]:focus,
+.registration-box input[type="password"]:focus {
+  outline: none;
+  border-bottom: 2px solid #00ffff;
+  box-shadow: none;
+}
+
+.registration-box input[type="submit"] {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background-color: #111111;
+  color: #ffffff;
   font-size: 13px;
+  font-weight: 500;
 }
 
-.simple-link {
-  margin-left: 15px;
-  color: #777;
+.registration-box input[type="submit"]:hover {
+  background-color: #00ffff;
+  color: #111111;
 }
 
-.profile-page {
-  width: 90%;
-  max-width: 700px;
-  margin: 60px auto;
+.registration-box > a {
+  display: block;
+  margin-top: 22px;
+  color: #555555;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
 }
 
+.registration-box > a:hover {
+  color: #111111;
+  text-decoration: underline;
+}
+
+/* ===== アカウント ===== */
+
+.account-page h1,
+.profile-page h1,
+.room-new-page h1 {
+  margin-bottom: 35px;
+  color: #111111;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.account-box,
 .profile-box {
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 30px;
+  padding: 35px;
   margin-bottom: 25px;
-  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 0;
 }
 
+.account-box p,
 .profile-box p {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  color: #111111;
 }
 
+.account-box span,
 .profile-box span {
-  display: block;
-  color: #999;
-  font-size: 13px;
+  margin-bottom: 5px;
+  color: #777777;
+  font-size: 11px;
 }
+
+/* ===== プロフィール ===== */
 
 .profile-image {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .profile-image img {
   border-radius: 50%;
   object-fit: cover;
+  border: 1px solid #111111;
 }
 
-.room-detail-page {
+/* ===== 施設登録 ===== */
+
+.room-new-page {
   width: 90%;
   max-width: 700px;
   margin: 60px auto;
 }
 
-.room-detail-box,
-.room-booking-box {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 30px;
+.room-new-page form {
+  padding: 35px;
   margin-bottom: 25px;
+  background-color: #ffffff;
+  border: 1px solid #111111;
 }
 
-.room-detail-image {
-  display: block;
+.room-new-page form > div {
+  margin-bottom: 24px;
+}
+
+.room-new-page label {
+  margin-bottom: 7px;
+  color: #111111;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.room-new-page input,
+.room-new-page textarea {
   width: 100%;
-  max-width: 500px;
-  height: 300px;
-  object-fit: cover;
+  max-width: none;
+}
+
+.room-new-page input[type="file"] {
+  padding: 10px 0;
+  border: 0;
+}
+
+.room-new-page input[type="submit"] {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid #111111;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.room-new-page input[type="submit"]:hover {
+  background-color: #00ffff;
+  color: #111111;
+}
+
+.rooms-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #111111;
+}
+
+.rooms-header h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.rooms-button {
+  background-color: #00ffff;
+  color: #111111;
+}
+
+.rooms-page > form {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 25px 0;
   margin-bottom: 25px;
+  border-bottom: 1px solid #dddddd;
 }
 
-.room-detail-box span {
-  display: block;
-  color: #999;
-  font-size: 13px;
-  margin-bottom: 3px;
+.rooms-page > form > div {
+  flex: 1;
+  margin-bottom: 0;
 }
 
-.room-detail-box p {
-  margin-bottom: 20px;
+.rooms-page > form input,
+.rooms-page > form select {
+  max-width: none;
 }
 
-.room-booking-box h2 {
+.rooms-page > form input[type="submit"] {
+  width: 120px;
+  padding: 12px 20px;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.rooms-page > form input[type="submit"]:hover {
+  background-color: #00ffff;
+  color: #111111;
+}
+
+.rooms-list {
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.room-card {
+  border: 1px solid #111111;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.room-card__image {
+  height: 240px;
+}
+
+.room-card__body {
+  padding: 22px;
+}
+
+.room-card__date {
+  color: #888888;
+}
+
+.room-card h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.room-card h2 a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: #00ffff;
+  text-decoration-thickness: 4px;
+}
+
+.room-card__description {
+  color: #666666;
+}
+
+.room-card__price {
+  font-size: 17px;
+}
+
+@media (max-width: 700px) {
+  .rooms-page > form {
+    display: block;
+  }
+
+  .rooms-page > form > div {
+    margin-bottom: 15px;
+  }
+
+  .rooms-page > form input[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* ===== 予約済み一覧 ===== */
+
+.reservations-page h1 {
+  padding-bottom: 20px;
   margin-bottom: 25px;
+  border-bottom: 1px solid #111111;
+  font-size: 32px;
+  font-weight: 500;
 }
 
 .reservation {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 25px;
+  display: flex;
+  gap: 25px;
+  padding: 20px 0;
   margin-bottom: 25px;
+  border: 0;
+  border-bottom: 1px solid #dddddd;
+  border-radius: 0;
+  background-color: #ffffff;
+}
+
+.reservation__image {
+  flex: 0 0 260px;
 }
 
 .reservation__image img {
-  border-radius: 5px;
+  width: 260px;
+  height: 190px;
+  object-fit: cover;
 }
 
 .reservation__body h2 {
-  color: #555;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.reservation__body h2 a {
+  color: #111111;
+  text-decoration: none;
+}
+
+.reservation__body h2 a:hover {
+  text-decoration: underline;
+  text-decoration-color: #00ffff;
+  text-decoration-thickness: 4px;
 }
 
 .reservation__body p {
-  color: #777;
+  margin: 8px 0;
+  color: #555555;
+  font-size: 14px;
 }
 
-.reservation-confirm-page {
-  width: 90%;
-  max-width: 700px;
-  margin: 60px auto;
-}
+@media (max-width: 700px) {
+  .reservation__image {
+    width: 100%;
+  }
 
-.reservation-confirm-box {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 30px;
-  margin-bottom: 25px;
-}
-
-.reservation-confirm-box p {
-  margin-bottom: 18px;
-}
-
-.reservation-confirm-box span {
-  color: #999;
-  font-size: 13px;
-}
-.home-page {
-  width: 90%;
-  max-width: 900px;
-  margin: 100px auto;
-  text-align: center;
-}
-
-.home-box {
-  background-color: #ffffff;
-  padding: 70px 40px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-.home-box h1 {
-  margin-bottom: 20px;
-}
-
-.home-box p {
-  margin-bottom: 30px;
-  color: #77737a;
+  .reservation__image img {
+    width: 100%;
+    height: 220px;
+  }
 }

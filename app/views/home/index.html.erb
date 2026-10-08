@@ -1,9 +1,31 @@
 <div class="home-page">
-  <div class="home-box">
-    <h1>宿泊予約アプリ</h1>
-<p>泊まりたい場所を探してみませんか。</p>
+  <div class="home-hero">
+    <div class="home-copy">
+      <p class="home-label">STAY / TRAVEL</p>
 
-<%= link_to "施設を探す", rooms_path, class: "rooms-button" %>
+      <h1>
+        泊まる場所から、<br>
+        旅をはじめる。
+      </h1>
 
+      <p class="home-description">
+        行きたい場所、泊まりたい場所。<br>
+        あなたにぴったりの宿を見つけてください。
+      </p>
+
+      <%= link_to "施設を探す", rooms_path, class: "home-button" %>
+    </div>
+
+    <div class="home-photo">
+      <%= image_tag "florian-schindler-Hzc7XsBk8xY-unsplash.jpg" %>
+    </div>
+
+    <div class="home-accent"></div>
+
+    <div class="home-info">
+      <span>ROOM</span>
+      <span>SEARCH</span>
+      <span>JAPAN</span>
+    </div>
   </div>
 </div>
