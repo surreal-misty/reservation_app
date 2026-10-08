@@ -1,0 +1,25 @@
+<div class="profile-page">
+  <h1>プロフィール</h1>
+
+  <div class="profile-box">
+    <div class="profile-image">
+      <% if current_user.image.attached? %>
+        <%= image_tag current_user.image, width: 150, height: 150 %>
+      <% else %>
+      <%= image_tag "https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png", width: 150, height: 150 %>
+      <% end %>
+    </div>
+
+    <p>
+      <span>名前</span>
+      <%= current_user.name %>
+    </p>
+
+    <p>
+      <span>自己紹介</span>
+      <%= current_user.introduction %>
+    </p>
+  </div>
+
+  <%= link_to "プロフィールを編集", edit_users_profile_path, class: "rooms-button" %>
+</div>
